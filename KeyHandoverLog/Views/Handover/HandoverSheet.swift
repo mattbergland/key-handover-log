@@ -91,7 +91,7 @@ struct HandoverSheet: View {
         guard let recipientId else { return }
         let due = preset.interval.map { Date().addingTimeInterval($0) } ?? customDate
         do {
-            try store.handOver(keyId: key.id, to: recipientId, dueBackAt: due, note: note.isEmpty ? nil : note)
+            _ = try store.handOver(keyId: key.id, to: recipientId, dueBackAt: due, note: note.isEmpty ? nil : note)
             dismiss()
         } catch {
             store.lastError = error as? KeyLogStoreError
