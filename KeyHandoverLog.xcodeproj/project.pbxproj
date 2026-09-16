@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16531C9045DE6D147E276FEF /* LocalKeyLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC77ABC79B397858CB53D6 /* LocalKeyLogStore.swift */; };
+		1C827467A7A877B7DE71774A /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322F2D319A22A3E4CA5E3BB /* SampleData.swift */; };
+		33B3920F385EFEE9B0DBEF1B /* HandoverSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2BB5B172A189D7196DEE7A /* HandoverSheet.swift */; };
+		3AB99CC145BC7EDA563C9DE9 /* VolunteersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E2DA474E24F00665C6B0D /* VolunteersView.swift */; };
+		71E283563555764795A31129 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707E8A6AA56E94E84991E12 /* Models.swift */; };
+		9482BB8A3261AB50F884BA1B /* KeyHandoverLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8870306EB1E1019D58733D8 /* KeyHandoverLogApp.swift */; };
+		BE64A0AF812D79DF7EE893B1 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DA86989BB7F626D6F38F59 /* RootTabView.swift */; };
+		C601C022A753A34061ACF12C /* KeyLogStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9062DA67CF5F3A8B12E10132 /* KeyLogStoreTests.swift */; };
+		CAC6B716E89C4CDDF6B2B3A7 /* KeyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2288DD494EFF4845000432E /* KeyDetailView.swift */; };
+		D579D61EB25D17002915651D /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A6D929EC1C7AB644AE869 /* Components.swift */; };
+		E75A43014E7E8B717D255B1D /* KeyLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E32FB1CE29E9400E3CF7AC /* KeyLogStore.swift */; };
+		FC1A4F97CB045A6F22457CC4 /* KeysListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D3DEDD536B0833CA5ED6FB /* KeysListView.swift */; };
+		FFB4E0FDCD92766FE6D07866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103F9B76A5C681C46BA415C5 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6EBF5DC743E93C25731A90C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC7ED2CAD6E376E49EB22C86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E9AAAB3CFDBC82AA680BC0D;
+			remoteInfo = KeyHandoverLog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05D53F695B78B985E97EBDF8 /* KeyHandoverLog.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KeyHandoverLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		103F9B76A5C681C46BA415C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D5A6D929EC1C7AB644AE869 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		7BEC77ABC79B397858CB53D6 /* LocalKeyLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalKeyLogStore.swift; sourceTree = "<group>"; };
+		7D2E2DA474E24F00665C6B0D /* VolunteersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersView.swift; sourceTree = "<group>"; };
+		7E2BB5B172A189D7196DEE7A /* HandoverSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandoverSheet.swift; sourceTree = "<group>"; };
+		89E32FB1CE29E9400E3CF7AC /* KeyLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyLogStore.swift; sourceTree = "<group>"; };
+		8F53ABFC129B6FD32616B56F /* KeyHandoverLogTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KeyHandoverLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9062DA67CF5F3A8B12E10132 /* KeyLogStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyLogStoreTests.swift; sourceTree = "<group>"; };
+		A322F2D319A22A3E4CA5E3BB /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		A707E8A6AA56E94E84991E12 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B2288DD494EFF4845000432E /* KeyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDetailView.swift; sourceTree = "<group>"; };
+		B7D3DEDD536B0833CA5ED6FB /* KeysListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysListView.swift; sourceTree = "<group>"; };
+		E8870306EB1E1019D58733D8 /* KeyHandoverLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyHandoverLogApp.swift; sourceTree = "<group>"; };
+		E9DA86989BB7F626D6F38F59 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		30BBF509982D1132977BE1E8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				89E32FB1CE29E9400E3CF7AC /* KeyLogStore.swift */,
+				7BEC77ABC79B397858CB53D6 /* LocalKeyLogStore.swift */,
+				A322F2D319A22A3E4CA5E3BB /* SampleData.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4050AC52092B8683BB5DD5E0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E8870306EB1E1019D58733D8 /* KeyHandoverLogApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		66D221206C4733CD3A1A4DB2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				103F9B76A5C681C46BA415C5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7437C4E00CC1F372EB9560E0 /* KeyHandoverLog */ = {
+			isa = PBXGroup;
+			children = (
+				4050AC52092B8683BB5DD5E0 /* App */,
+				E503880C5DCFF982C7D53F57 /* Models */,
+				66D221206C4733CD3A1A4DB2 /* Resources */,
+				30BBF509982D1132977BE1E8 /* Services */,
+				A9CB21B0AB9644C55892A8B4 /* Views */,
+			);
+			path = KeyHandoverLog;
+			sourceTree = "<group>";
+		};
+		8547BB5CF63C4116B1018FF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05D53F695B78B985E97EBDF8 /* KeyHandoverLog.app */,
+				8F53ABFC129B6FD32616B56F /* KeyHandoverLogTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D2F9AEB0E2BD250D6D62F69 /* Volunteers */ = {
+			isa = PBXGroup;
+			children = (
+				7D2E2DA474E24F00665C6B0D /* VolunteersView.swift */,
+			);
+			path = Volunteers;
+			sourceTree = "<group>";
+		};
+		A9CB21B0AB9644C55892A8B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9DA86989BB7F626D6F38F59 /* RootTabView.swift */,
+				F5A70C4077481D3D6FA7578E /* Components */,
+				E44725270044A8E0868FDEDA /* Handover */,
+				D6BB189C5E1F89797C7678A3 /* KeyDetail */,
+				DF6D50BF40FDD24FF3D73FCD /* Keys */,
+				8D2F9AEB0E2BD250D6D62F69 /* Volunteers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0EE344C8B22A29F8E8D888B = {
+			isa = PBXGroup;
+			children = (
+				7437C4E00CC1F372EB9560E0 /* KeyHandoverLog */,
+				D407F363E20187A0BE33BEBD /* KeyHandoverLogTests */,
+				8547BB5CF63C4116B1018FF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D407F363E20187A0BE33BEBD /* KeyHandoverLogTests */ = {
+			isa = PBXGroup;
+			children = (
+				9062DA67CF5F3A8B12E10132 /* KeyLogStoreTests.swift */,
+			);
+			path = KeyHandoverLogTests;
+			sourceTree = "<group>";
+		};
+		D6BB189C5E1F89797C7678A3 /* KeyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B2288DD494EFF4845000432E /* KeyDetailView.swift */,
+			);
+			path = KeyDetail;
+			sourceTree = "<group>";
+		};
+		DF6D50BF40FDD24FF3D73FCD /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				B7D3DEDD536B0833CA5ED6FB /* KeysListView.swift */,
+			);
+			path = Keys;
+			sourceTree = "<group>";
+		};
+		E44725270044A8E0868FDEDA /* Handover */ = {
+			isa = PBXGroup;
+			children = (
+				7E2BB5B172A189D7196DEE7A /* HandoverSheet.swift */,
+			);
+			path = Handover;
+			sourceTree = "<group>";
+		};
+		E503880C5DCFF982C7D53F57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A707E8A6AA56E94E84991E12 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5A70C4077481D3D6FA7578E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4D5A6D929EC1C7AB644AE869 /* Components.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E9AAAB3CFDBC82AA680BC0D /* KeyHandoverLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514351A61D6A2FE3DBA4D413 /* Build configuration list for PBXNativeTarget "KeyHandoverLog" */;
+			buildPhases = (
+				92BD6C11A074D9B3F5274188 /* Sources */,
+				3944C1B50883DF308ACAEA1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyHandoverLog;
+			packageProductDependencies = (
+			);
+			productName = KeyHandoverLog;
+			productReference = 05D53F695B78B985E97EBDF8 /* KeyHandoverLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A3BD6EA1F917721DC34EAEF8 /* KeyHandoverLogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A0A3148F391FAA3B18622E8 /* Build configuration list for PBXNativeTarget "KeyHandoverLogTests" */;
+			buildPhases = (
+				E75D603FE0A6937F2AFB30F5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF1A4E7E27CB303937038E21 /* PBXTargetDependency */,
+			);
+			name = KeyHandoverLogTests;
+			packageProductDependencies = (
+			);
+			productName = KeyHandoverLogTests;
+			productReference = 8F53ABFC129B6FD32616B56F /* KeyHandoverLogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC7ED2CAD6E376E49EB22C86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0E9AAAB3CFDBC82AA680BC0D = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					A3BD6EA1F917721DC34EAEF8 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BC2728D8CF9124247AAA5C1B /* Build configuration list for PBXProject "KeyHandoverLog" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D0EE344C8B22A29F8E8D888B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8547BB5CF63C4116B1018FF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E9AAAB3CFDBC82AA680BC0D /* KeyHandoverLog */,
+				A3BD6EA1F917721DC34EAEF8 /* KeyHandoverLogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3944C1B50883DF308ACAEA1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB4E0FDCD92766FE6D07866 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92BD6C11A074D9B3F5274188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D579D61EB25D17002915651D /* Components.swift in Sources */,
+				33B3920F385EFEE9B0DBEF1B /* HandoverSheet.swift in Sources */,
+				CAC6B716E89C4CDDF6B2B3A7 /* KeyDetailView.swift in Sources */,
+				9482BB8A3261AB50F884BA1B /* KeyHandoverLogApp.swift in Sources */,
+				E75A43014E7E8B717D255B1D /* KeyLogStore.swift in Sources */,
+				FC1A4F97CB045A6F22457CC4 /* KeysListView.swift in Sources */,
+				16531C9045DE6D147E276FEF /* LocalKeyLogStore.swift in Sources */,
+				71E283563555764795A31129 /* Models.swift in Sources */,
+				BE64A0AF812D79DF7EE893B1 /* RootTabView.swift in Sources */,
+				1C827467A7A877B7DE71774A /* SampleData.swift in Sources */,
+				3AB99CC145BC7EDA563C9DE9 /* VolunteersView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E75D603FE0A6937F2AFB30F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C601C022A753A34061ACF12C /* KeyLogStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF1A4E7E27CB303937038E21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E9AAAB3CFDBC82AA680BC0D /* KeyHandoverLog */;
+			targetProxy = A6EBF5DC743E93C25731A90C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27E213F6B6E51B0C3249D9B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5428C54ED96FF7F993B9F71A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Key Handover Log";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = land.mattberg.KeyHandoverLog;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		73828C679F18D015A7421060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Key Handover Log";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = land.mattberg.KeyHandoverLog;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B2CFADA5EC6ECFD9F259BD60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = land.mattberg.KeyHandoverLogTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeyHandoverLog.app/KeyHandoverLog";
+			};
+			name = Debug;
+		};
+		B8CA045CABD2D2AB4F893CFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = land.mattberg.KeyHandoverLogTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeyHandoverLog.app/KeyHandoverLog";
+			};
+			name = Release;
+		};
+		E21C58FD3CA9C10A72FFD3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		514351A61D6A2FE3DBA4D413 /* Build configuration list for PBXNativeTarget "KeyHandoverLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5428C54ED96FF7F993B9F71A /* Debug */,
+				73828C679F18D015A7421060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5A0A3148F391FAA3B18622E8 /* Build configuration list for PBXNativeTarget "KeyHandoverLogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2CFADA5EC6ECFD9F259BD60 /* Debug */,
+				B8CA045CABD2D2AB4F893CFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BC2728D8CF9124247AAA5C1B /* Build configuration list for PBXProject "KeyHandoverLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27E213F6B6E51B0C3249D9B4 /* Debug */,
+				E21C58FD3CA9C10A72FFD3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC7ED2CAD6E376E49EB22C86 /* Project object */;
+}
