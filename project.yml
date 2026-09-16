@@ -1,0 +1,43 @@
+name: KeyHandoverLog
+options:
+  bundleIdPrefix: land.mattberg
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_EMIT_LOC_STRINGS: "YES"
+targets:
+  KeyHandoverLog:
+    type: application
+    platform: iOS
+    sources:
+      - path: KeyHandoverLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: land.mattberg.KeyHandoverLog
+        INFOPLIST_KEY_CFBundleDisplayName: Key Handover Log
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        GENERATE_INFOPLIST_FILE: YES
+    scheme:
+      testTargets:
+        - KeyHandoverLogTests
+  KeyHandoverLogTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: KeyHandoverLogTests
+    dependencies:
+      - target: KeyHandoverLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: land.mattberg.KeyHandoverLogTests
+        GENERATE_INFOPLIST_FILE: YES
