@@ -30,6 +30,13 @@ struct HandoverSheet: View {
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    Text("Select a recipient or return this key to the lockbox.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                } header: {
+                    Text("Handing over: \(key.name)")
+                }
                 Section("Recipient") {
                     ForEach(recipients) { volunteer in
                         Button {
@@ -64,7 +71,7 @@ struct HandoverSheet: View {
                     Section("Note") { TextField("Optional note", text: $note, axis: .vertical) }
                 }
             }
-            .navigationTitle("Hand over \(key.name)")
+            .navigationTitle("Hand over")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }

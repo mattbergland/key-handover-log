@@ -29,7 +29,11 @@ struct VolunteersView: View {
                 }
             }
             .navigationTitle("Volunteers")
-            .sheet(item: $selectedVolunteer) { VolunteerDetailView(volunteerId: $0.id) }
+            .sheet(item: $selectedVolunteer) { volunteer in
+                NavigationStack {
+                    VolunteerDetailView(volunteerId: volunteer.id)
+                }
+            }
             .confirmationDialog("Reset all demo data?", isPresented: $showingResetConfirmation) {
                 Button("Reset demo data", role: .destructive) { store.perform { try store.resetDemoData() } }
                 Button("Cancel", role: .cancel) {}
@@ -64,6 +68,7 @@ struct VolunteerRow: View {
 
 struct VolunteerDetailView: View {
     @Environment(LocalKeyLogStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
     let volunteerId: UUID
     private var volunteer: Volunteer? { store.volunteer(id: volunteerId) }
 
@@ -87,6 +92,12 @@ struct VolunteerDetailView: View {
                     }
                 }
             }
-        }.navigationTitle("Volunteer")
+        }
+        .navigationTitle(volunteer?.name ?? "Volunteer")
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Done") { dismiss() }
+            }
+        }
     }
 }
