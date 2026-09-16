@@ -52,29 +52,62 @@ struct KeysListView: View {
 
 struct KeyRowView: View {
     @Environment(LocalKeyLogStore.self) private var store
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let key: LighthouseKey
     private var pending: Handover? { store.pendingHandover(forKey: key.id) }
 
     var body: some View {
-        HStack(spacing: 12) {
-            KeyTagView(key: key)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(key.name).font(.headline)
-                if let pending, let recipient = store.volunteer(id: pending.toVolunteerId) {
-                    Text("Handing over to \(recipient.name) — awaiting confirmation").font(.caption).foregroundStyle(.secondary)
-                } else if let due = key.dueBackAt {
-                    Text(due < .now ? "Overdue" : "Due back \(due, formatter: RelativeDateTimeFormatter())")
-                        .font(.caption).foregroundStyle(due < .now ? .red : .secondary)
+        Group {
+            if dynamicTypeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 12) {
+                        KeyTagView(key: key)
+                        titleAndSubtitle
+                    }
+                    holderView
                 }
-            }
-            Spacer()
-            if let holder = store.volunteer(id: key.holderId) {
-                AvatarView(initials: holder.initials, name: holder.name, size: 34)
             } else {
-                Image(systemName: "lock.fill").foregroundStyle(.secondary).accessibilityLabel("In lockbox")
+                HStack(spacing: 12) {
+                    KeyTagView(key: key)
+                    titleAndSubtitle
+                    Spacer()
+                    holderView
+                }
             }
         }
         .padding(.vertical, 4)
+    }
+
+    private var titleAndSubtitle: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(key.name).font(.headline)
+            if let pending, let recipient = store.volunteer(id: pending.toVolunteerId) {
+                Text("Handing over to \(recipient.name) — awaiting confirmation")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } else if let due = key.dueBackAt {
+                Text(due < .now ? "Overdue" : "Due back \(due, formatter: RelativeDateTimeFormatter())")
+                    .font(.caption)
+                    .foregroundStyle(due < .now ? .red : .secondary)
+            }
+        }
+    }
+
+    private var holderView: some View {
+        Group {
+            if let holder = store.volunteer(id: key.holderId) {
+                HStack(spacing: 8) {
+                    AvatarView(initials: holder.initials, name: holder.name, size: 34)
+                    if dynamicTypeSize.isAccessibilitySize {
+                        Text(holder.name)
+                            .font(.subheadline)
+                    }
+                }
+            } else {
+                Label("In lockbox", systemImage: "lock.fill")
+                    .foregroundStyle(.secondary)
+            }
+        }
     }
 }
 
@@ -87,13 +120,41 @@ struct PendingHandoverBanner: View {
             Label {
                 Text("\(store.volunteer(id: handover.fromVolunteerId)?.name ?? "Someone") is handing you the \(store.key(id: handover.keyId)?.name ?? "key")")
             } icon: { Image(systemName: "hand.point.right.fill") }
-            HStack {
-                Button("Confirm") { store.perform { try store.confirmReceipt(handoverId: handover.id) } }
-                    .buttonStyle(.borderedProminent)
-                Button("Decline", role: .destructive) { store.perform { try store.declineHandover(handoverId: handover.id) } }
-                    .buttonStyle(.bordered)
+            ViewThatFits(in: .horizontal) {
+                HStack {
+                    confirmButton
+                    declineButton
+                }
+                VStack(alignment: .leading) {
+                    confirmButton
+                    declineButton
+                }
             }
         }
         .padding(.vertical, 4)
+    }
+
+    private var confirmButton: some View {
+        Button {
+            store.perform { try store.confirmReceipt(handoverId: handover.id) }
+        } label: {
+            Text("Confirm")
+                .multilineTextAlignment(.center)
+        }
+        .buttonStyle(.borderedProminent)
+        .fixedSize(horizontal: false, vertical: true)
+        .controlSize(.large)
+    }
+
+    private var declineButton: some View {
+        Button(role: .destructive) {
+            store.perform { try store.declineHandover(handoverId: handover.id) }
+        } label: {
+            Text("Decline")
+                .multilineTextAlignment(.center)
+        }
+        .buttonStyle(.bordered)
+        .fixedSize(horizontal: false, vertical: true)
+        .controlSize(.large)
     }
 }

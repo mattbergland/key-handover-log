@@ -29,16 +29,30 @@ struct KeyDetailView: View {
                                 Text("This handover is waiting for your confirmation.")
                             }.foregroundStyle(.orange)
                         }
-                        HStack {
-                            Button("Hand over") { showingHandover = true }.buttonStyle(.borderedProminent)
-                            if !key.isInLockbox {
-                                Button("Return to lockbox", role: .destructive) { showingReturnConfirmation = true }.buttonStyle(.bordered)
+                        ViewThatFits(in: .horizontal) {
+                            HStack {
+                                handoverButton
+                                if !key.isInLockbox {
+                                    returnButton
+                                }
+                            }
+                            VStack(alignment: .leading) {
+                                handoverButton
+                                if !key.isInLockbox {
+                                    returnButton
+                                }
                             }
                         }
                         if let pending, pending.toVolunteerId == store.currentUserId {
-                            HStack {
-                                Button("Confirm receipt") { store.perform { try store.confirmReceipt(handoverId: pending.id) } }.buttonStyle(.borderedProminent)
-                                Button("Decline", role: .destructive) { store.perform { try store.declineHandover(handoverId: pending.id) } }.buttonStyle(.bordered)
+                            ViewThatFits(in: .horizontal) {
+                                HStack {
+                                    confirmButton(for: pending)
+                                    declineButton(for: pending)
+                                }
+                                VStack(alignment: .leading) {
+                                    confirmButton(for: pending)
+                                    declineButton(for: pending)
+                                }
                             }
                         }
                         VStack(alignment: .leading, spacing: 10) {
@@ -66,6 +80,54 @@ struct KeyDetailView: View {
                 ContentUnavailableView("Key not found", systemImage: "questionmark")
             }
         }
+    }
+
+    private var handoverButton: some View {
+        Button {
+            showingHandover = true
+        } label: {
+            Text("Hand over")
+                .multilineTextAlignment(.center)
+        }
+        .buttonStyle(.borderedProminent)
+        .fixedSize(horizontal: false, vertical: true)
+        .controlSize(.large)
+    }
+
+    private var returnButton: some View {
+        Button(role: .destructive) {
+            showingReturnConfirmation = true
+        } label: {
+            Text("Return to lockbox")
+                .multilineTextAlignment(.center)
+        }
+        .buttonStyle(.bordered)
+        .fixedSize(horizontal: false, vertical: true)
+        .controlSize(.large)
+    }
+
+    private func confirmButton(for pending: Handover) -> some View {
+        Button {
+            store.perform { try store.confirmReceipt(handoverId: pending.id) }
+        } label: {
+            Text("Confirm receipt")
+                .multilineTextAlignment(.center)
+        }
+        .buttonStyle(.borderedProminent)
+        .fixedSize(horizontal: false, vertical: true)
+        .controlSize(.large)
+    }
+
+    private func declineButton(for pending: Handover) -> some View {
+        Button(role: .destructive) {
+            store.perform { try store.declineHandover(handoverId: pending.id) }
+        } label: {
+            Text("Decline")
+                .multilineTextAlignment(.center)
+        }
+        .buttonStyle(.bordered)
+        .fixedSize(horizontal: false, vertical: true)
+        .controlSize(.large)
     }
 
     private func statusCard(_ key: LighthouseKey) -> some View {

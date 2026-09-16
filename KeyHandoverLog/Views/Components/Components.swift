@@ -4,12 +4,23 @@ struct AvatarView: View {
     let initials: String
     let name: String
     var size: CGFloat = 38
+    @ScaledMetric(relativeTo: .body) private var scaledSize: CGFloat = 38
+
+    init(initials: String, name: String, size: CGFloat = 38) {
+        self.initials = initials
+        self.name = name
+        self.size = size
+        self._scaledSize = ScaledMetric(wrappedValue: size, relativeTo: .body)
+    }
 
     var body: some View {
+        let diameter = min(scaledSize, size * 1.6)
         Text(initials)
-            .font(.caption.weight(.bold))
+            .font(.system(size: diameter * 0.4, weight: .semibold))
+            .minimumScaleFactor(0.5)
+            .lineLimit(1)
             .foregroundStyle(.white)
-            .frame(width: size, height: size)
+            .frame(width: diameter, height: diameter)
             .background(Color.accentColor.gradient, in: Circle())
             .accessibilityLabel(name)
     }
