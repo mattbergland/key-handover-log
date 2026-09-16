@@ -33,6 +33,14 @@ protocol KeyLogStore: AnyObject, Observable {
 }
 
 extension KeyLogStore {
+    func perform(_ action: () throws -> Void) {
+        do {
+            try action()
+        } catch {
+            lastError = error as? KeyLogStoreError
+        }
+    }
+
     func handOver(keyId: UUID, to volunteerId: UUID, dueBackAt: Date?, note: String?) throws -> Handover {
         try handOver(keyId: keyId, to: volunteerId, dueBackAt: dueBackAt, note: note, now: .now)
     }

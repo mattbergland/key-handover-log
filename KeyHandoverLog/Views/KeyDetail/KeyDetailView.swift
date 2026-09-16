@@ -37,8 +37,8 @@ struct KeyDetailView: View {
                         }
                         if let pending, pending.toVolunteerId == store.currentUserId {
                             HStack {
-                                Button("Confirm receipt") { try? store.confirmReceipt(handoverId: pending.id) }.buttonStyle(.borderedProminent)
-                                Button("Decline", role: .destructive) { try? store.declineHandover(handoverId: pending.id) }.buttonStyle(.bordered)
+                                Button("Confirm receipt") { store.perform { try store.confirmReceipt(handoverId: pending.id) } }.buttonStyle(.borderedProminent)
+                                Button("Decline", role: .destructive) { store.perform { try store.declineHandover(handoverId: pending.id) } }.buttonStyle(.bordered)
                             }
                         }
                         VStack(alignment: .leading, spacing: 10) {
@@ -57,7 +57,9 @@ struct KeyDetailView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .sheet(isPresented: $showingHandover) { HandoverSheet(key: key) }
                 .confirmationDialog("Return this key to the lockbox?", isPresented: $showingReturnConfirmation) {
-                    Button("Return to lockbox", role: .destructive) { try? store.returnToLockbox(keyId: key.id, note: nil) }
+                    Button("Return to lockbox", role: .destructive) {
+                        store.perform { try store.returnToLockbox(keyId: key.id, note: nil) }
+                    }
                     Button("Cancel", role: .cancel) {}
                 }
             } else {

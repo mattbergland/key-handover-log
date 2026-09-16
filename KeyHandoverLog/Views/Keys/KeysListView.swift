@@ -88,9 +88,9 @@ struct PendingHandoverBanner: View {
                 Text("\(store.volunteer(id: handover.fromVolunteerId)?.name ?? "Someone") is handing you the \(store.key(id: handover.keyId)?.name ?? "key")")
             } icon: { Image(systemName: "hand.point.right.fill") }
             HStack {
-                Button("Confirm") { try? store.confirmReceipt(handoverId: handover.id) }
+                Button("Confirm") { store.perform { try store.confirmReceipt(handoverId: handover.id) } }
                     .buttonStyle(.borderedProminent)
-                Button("Decline", role: .destructive) { try? store.declineHandover(handoverId: handover.id) }
+                Button("Decline", role: .destructive) { store.perform { try store.declineHandover(handoverId: handover.id) } }
                     .buttonStyle(.bordered)
             }
         }

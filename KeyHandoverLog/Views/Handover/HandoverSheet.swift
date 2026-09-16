@@ -44,11 +44,13 @@ struct HandoverSheet: View {
                             }
                         }
                     }
-                    Button {
-                        recipientId = nil
-                        returningToLockbox = true
-                    } label: {
-                        Label("Return to lockbox", systemImage: "lock.fill")
+                    if !key.isInLockbox {
+                        Button {
+                            recipientId = nil
+                            returningToLockbox = true
+                        } label: {
+                            Label("Return to lockbox", systemImage: "lock.fill")
+                        }
                     }
                 }
                 if recipientId != nil {
@@ -75,7 +77,7 @@ struct HandoverSheet: View {
 
     private func confirm() {
         if returningToLockbox {
-            try? store.returnToLockbox(keyId: key.id, note: note.isEmpty ? nil : note)
+            store.perform { try store.returnToLockbox(keyId: key.id, note: note.isEmpty ? nil : note) }
             dismiss()
             return
         }

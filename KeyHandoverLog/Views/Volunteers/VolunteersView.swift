@@ -31,7 +31,7 @@ struct VolunteersView: View {
             .navigationTitle("Volunteers")
             .sheet(item: $selectedVolunteer) { VolunteerDetailView(volunteerId: $0.id) }
             .confirmationDialog("Reset all demo data?", isPresented: $showingResetConfirmation) {
-                Button("Reset demo data", role: .destructive) { try? store.resetDemoData() }
+                Button("Reset demo data", role: .destructive) { store.perform { try store.resetDemoData() } }
                 Button("Cancel", role: .cancel) {}
             }
         }
@@ -50,7 +50,12 @@ struct VolunteerRow: View {
                 Text(volunteer.role).font(.subheadline).foregroundStyle(.secondary)
                 if let phone = volunteer.phone { Text(phone).font(.caption).foregroundStyle(.secondary) }
                 let heldKeys = store.keysHeld(by: volunteer.id)
-                Text("Holds \(heldKeys.count) keys\(heldKeys.isEmpty ? "" : ": \(heldKeys.map(\.name).joined(separator: ", "))")")
+                let heldLabel: String = switch heldKeys.count {
+                case 0: "Holds no keys"
+                case 1: "Holds 1 key: \(heldKeys[0].name)"
+                default: "Holds \(heldKeys.count) keys: \(heldKeys.map(\.name).joined(separator: ", "))"
+                }
+                Text(heldLabel)
                     .font(.caption).foregroundStyle(.secondary)
             }
         }.padding(.vertical, 4)
