@@ -8,6 +8,7 @@ struct HandoverSheet: View {
     @State private var preset: DuePreset = .endOfShift
     @State private var customDate = Date().addingTimeInterval(4 * 3600)
     @State private var note = ""
+    @State private var returningToLockbox = false
 
     enum DuePreset: String, CaseIterable, Identifiable {
         case endOfShift = "End of shift", tomorrow = "Tomorrow", threeDays = "3 days", custom = "Custom"
@@ -23,7 +24,7 @@ struct HandoverSheet: View {
     }
 
     private var recipients: [Volunteer] {
-        store.volunteers.filter { $0.id != key.holderId && $0.id != store.currentUserId }
+        store.volunteers.filter { $0.id != key.holderId }
     }
 
     var body: some View {
@@ -33,6 +34,7 @@ struct HandoverSheet: View {
                     ForEach(recipients) { volunteer in
                         Button {
                             recipientId = volunteer.id
+                            returningToLockbox = false
                         } label: {
                             HStack {
                                 AvatarView(initials: volunteer.initials, name: volunteer.name, size: 30)
@@ -44,6 +46,7 @@ struct HandoverSheet: View {
                     }
                     Button {
                         recipientId = nil
+                        returningToLockbox = true
                     } label: {
                         Label("Return to lockbox", systemImage: "lock.fill")
                     }
@@ -64,18 +67,19 @@ struct HandoverSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Confirm") { confirm() }.disabled(recipientId == nil)
+                    Button("Confirm") { confirm() }.disabled(recipientId == nil && !returningToLockbox)
                 }
             }
         }
     }
 
     private func confirm() {
-        guard let recipientId else {
+        if returningToLockbox {
             try? store.returnToLockbox(keyId: key.id, note: note.isEmpty ? nil : note)
             dismiss()
             return
         }
+        guard let recipientId else { return }
         let due = preset.interval.map { Date().addingTimeInterval($0) } ?? customDate
         do {
             try store.handOver(keyId: key.id, to: recipientId, dueBackAt: due, note: note.isEmpty ? nil : note)
